@@ -1,0 +1,24 @@
+
+  <h1 class="pt-5 pb-4">Welcome on my WebSite!</h1>
+
+  <%= link_to "Add new citation", new_citation_path, class: "btn btn-success" %>
+
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Author</th>
+        <th scope="col">Citation</th>
+        <th scope="col">Created at</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @citations.each do |f| %>
+      <tr>
+        <th scope="row"><%= f.id %></th>
+        <td><%= f.author %></td>
+        <td><%= f.citation %></td>
+        <td><%=f.created_at.strftime("%m/%d/%Y")  %></td>
+      </tr>
+      <% end %>
+    </table>

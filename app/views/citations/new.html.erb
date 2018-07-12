@@ -1,0 +1,23 @@
+  <% if @citation.errors.any? %>
+    <div class="container pt-4 alert alert-danger">
+      <h4>Hey, we have a problem:</h4>
+        <ul>
+          <% @citation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <h1 class="pt-5 pb-5">Write your golden thought</h1>
+
+  <%= simple_form_for(@citation, html: { class: 'form-group' }) do |f| %>
+    <%= f.input :author %>
+    <%= f.input :citation %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+
+  <% end %>
+
+  <hr>
+
+  <%= link_to "Back to Main Page", root_path, class: "btn btn-outline-secondary" %>

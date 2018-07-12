@@ -1,0 +1,10 @@
+<h1>Great! Add your first citation</h1>
+<p>Find me in app/views/citations/new.html.erb</p>
+
+
+  <%= simple_form_for(@citation, html: { class: 'form-inline' }) do |f| %>
+    <%= f.input :author %>
+    <%= f.input :citation %>
+    <%= f.button :submit %>
+
+  <% end %>
