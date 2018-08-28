@@ -12,7 +12,6 @@
   <h1 class="pt-5 pb-5">Write your golden thought</h1>
 
   <%= simple_form_for(@citation, html: { class: 'form-group' }) do |f| %>
-    <%= f.input :author %>
     <%= f.input :citation %>
     <%= f.button :submit, class: "btn btn-primary" %>
 

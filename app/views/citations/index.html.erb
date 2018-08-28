@@ -6,8 +6,6 @@
   <table class="table mt-5">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Author</th>
         <th scope="col">Citation</th>
         <th scope="col">Created at</th>
       </tr>
@@ -15,10 +13,11 @@
     <tbody>
       <% @citations.each do |f| %>
       <tr>
-        <th scope="row"><%= f.id %></th>
-        <td><%= f.author %></td>
         <td><%= f.citation %></td>
-        <td><%=f.created_at.strftime("%m/%d/%Y")  %></td>
+        <td><b><%= f.created_at.strftime("%m %B %Y") %></b></td>
       </tr>
       <% end %>
     </table>
+    <div class="container pagination justify-content-center" >
+      <%= paginate @citations, pagination_class: "pagination-sm" %>
+    </div>

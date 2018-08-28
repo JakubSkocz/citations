@@ -1,7 +1,7 @@
 class CitationsController < ApplicationController
 
   def index
-    @citations = Citation.all
+    @citations = Citation.order('created_at DESC').page(params[:page]).per(12)
   end
 
 
